@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!--
+xml开发中 namespace自定义
+id SQL标签的唯一标识
+
+resultType 查询的表记录封装的类型
+
+#{sid} 获取查询参数
+
+StudentMapper.xml  SQL映射文件
+-->
+<mapper namespace="xxx.yyy.zzz">
+    <select id="aaa" resultType="com.sgxy.mybatis.entity.Student">
+        select *
+        from student
+        where sid = #{sid}
+    </select>
+</mapper>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/01-spring-ioc/01-spring-ioc.iml" filepath="$PROJECT_DIR$/01-spring-ioc/01-spring-ioc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02-spring-aop-calculator/02-spring-aop-calculator.iml" filepath="$PROJECT_DIR$/02-spring-aop-calculator/02-spring-aop-calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/03-spring-aop-annotation/03-spring-aop-annotation.iml" filepath="$PROJECT_DIR$/03-spring-aop-annotation/03-spring-aop-annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04-spring-aop-xml/04-spring-aop-xml.iml" filepath="$PROJECT_DIR$/04-spring-aop-xml/04-spring-aop-xml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05-spring-jdbctemplate/05-spring-jdbctemplate.iml" filepath="$PROJECT_DIR$/05-spring-jdbctemplate/05-spring-jdbctemplate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/06-spring-tx-annotation/06-spring-tx-annotation.iml" filepath="$PROJECT_DIR$/06-spring-tx-annotation/06-spring-tx-annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/07-spring-tx-xml/07-spring-tx-xml.iml" filepath="$PROJECT_DIR$/07-spring-tx-xml/07-spring-tx-xml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/08-springmvc-HelloWorld/08-springmvc-HelloWorld.iml" filepath="$PROJECT_DIR$/08-springmvc-HelloWorld/08-springmvc-HelloWorld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/09-springmvc-details/09-springmvc-details.iml" filepath="$PROJECT_DIR$/09-springmvc-details/09-springmvc-details.iml" />
+      <module fileurl="file://$PROJECT_DIR$/10-springmvc-backend2Frontend/10-springmvc-backend2Frontend.iml" filepath="$PROJECT_DIR$/10-springmvc-backend2Frontend/10-springmvc-backend2Frontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/11-springmvc-Restful/11-springmvc-Restful.iml" filepath="$PROJECT_DIR$/11-springmvc-Restful/11-springmvc-Restful.iml" />
+      <module fileurl="file://$PROJECT_DIR$/12-springmvc-restful-case/12-springmvc-restful-case.iml" filepath="$PROJECT_DIR$/12-springmvc-restful-case/12-springmvc-restful-case.iml" />
+      <module fileurl="file://$PROJECT_DIR$/13-springmvc-HttpMessageConverter/13-springmvc-HttpMessageConverter.iml" filepath="$PROJECT_DIR$/13-springmvc-HttpMessageConverter/13-springmvc-HttpMessageConverter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/14-springmvc-Interceptor/14-springmvc-Interceptor.iml" filepath="$PROJECT_DIR$/14-springmvc-Interceptor/14-springmvc-Interceptor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/15-mybatis-xml-base/15-mybatis-xml-base.iml" filepath="$PROJECT_DIR$/15-mybatis-xml-base/15-mybatis-xml-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/16-mybatis-interface-base/16-mybatis-interface-base.iml" filepath="$PROJECT_DIR$/16-mybatis-interface-base/16-mybatis-interface-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/17-mybatis-SQLMapping/17-mybatis-SQLMapping.iml" filepath="$PROJECT_DIR$/17-mybatis-SQLMapping/17-mybatis-SQLMapping.iml" />
+      <module fileurl="file://$PROJECT_DIR$/18-ssm-integration/18-ssm-integration.iml" filepath="$PROJECT_DIR$/18-ssm-integration/18-ssm-integration.iml" />
+    </modules>
+  </component>
+</project>

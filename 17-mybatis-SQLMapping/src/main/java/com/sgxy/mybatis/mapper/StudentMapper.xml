@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sgxy.mybatis.mapper.StudentMapper">
+    <!--
+     id为了被引用
+    type 指定哪个类型的封装规则
+    -->
+    <!--<resultMap id="myMap1" type="mystu">
+        <id column="sid" property="sid"></id>
+        <result column="s_name" property="sName"></result>
+        <result column="sgender" property="sgender"></result>
+        <result column="age" property="age"></result>
+        <result column="classid" property="classid"></result>
+
+        <result column="cid" property="aClass.cid"></result>
+        <result column="cname" property="aClass.cname"></result>
+    </resultMap>-->
+
+    <resultMap id="myMap1" type="mystu2">
+        <id column="sid" property="sid"></id>
+        <result column="s_name" property="sName"></result>
+        <result column="sgender" property="sgender"></result>
+        <result column="age" property="age"></result>
+        <result column="classid" property="classid"></result>
+
+        <!--
+        property 把班级表查询的数据封装到学生的什么属性
+        -->
+        <!--<association property="aClass" javaType="myclass">
+            <id column="cid" property="cid"></id>
+            <result column="cname" property="cname"></result>
+        </association>-->
+    </resultMap>
+
+    <!--
+    1 查询1001学生的信息时  把他所在班级的信息也查出来
+    -->
+
+    <!--    <select id="selectStudentById" resultType="student">-->
+    <select id="selectStudentById" resultMap="myMap1">
+        select *
+        from student s,
+             class c
+        where s.classid = c.cid
+          and sid = #{sid}
+    </select>
+
+    <!--
+         PreparedStatement
+         select * from student where sgender = ? and age = ? -->
+    <!--
+     Statement
+     select * from student where sgender = '男' and age = 33
+     -->
+
+    <!--
+        where标签的作用就是动态的决定是否拼接条件
+        如果没有条件 where就不会出现
+        如果有一个条件 where会自动将该sql前的and截取掉
+        如果有多个条件 只会截取第一个and  后面的and全部保留
+    -->
+    <select id="selectStudentByCondition" resultType="mystu2">
+        select *
+        from student
+        <where>
+            <if test="sgender != null and sgender !=''">
+                and sgender = #{sgender}
+            </if>
+
+            <if test="age != null">
+                and age = #{age}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectAll" resultType="mystu2">
+        select *
+        from student
+    </select>
+
+    <!--
+        select * from student where sid = 1001 or sid = 1002 or sid = 1003
+        select * from student where sid in (1001,1002,1003);
+    -->
+
+    <!--如果方法传递的是pojo对象 #{}获取对象的属性值信息
+    useGeneratedKeys="true" 插入数据之后把mysql生成的主键拿来使用
+    keyProperty="sid" 把主键设置给pojo的sid属性
+    -->
+    <insert id="saveStudent" useGeneratedKeys="true" keyProperty="sid">
+        insert into student (sid, s_name, sgender, age, classid)
+        VALUES (null, #{sName}, #{sgender}, #{age}, #{classid})
+    </insert>
+
+    <delete id="deleteStudent">
+        delete
+        from student
+        where sid = #{sid}
+    </delete>
+
+    <update id="updateStudent">
+        update student
+        <set>
+            <if test="sName != null and sName != ''">
+                s_name = #{sName},
+            </if>
+            <if test="age != null">
+                age=#{age},
+            </if>
+            <if test="sgender != null and sgender !=''">
+                sgender=#{sgender},
+            </if>
+            <if test="classid != null">
+                classid = #{classid}
+            </if>
+        </set>
+        <where>
+            <if test="sid != null">
+                sid = #{sid}
+            </if>
+        </where>
+    </update>
+
+    <select id="selectStudentByIds" resultType="mystu2">
+        select * from student where sid in
+        <foreach collection="list" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </select>
+
+    <select id="selectStudent2Map" resultType="map">
+        select *
+        from student
+        where sid = #{sid}
+    </select>
+
+    <select id="selectStudent2MapBykey" resultType="mystu2">
+        select *
+        from student
+    </select>
+</mapper>

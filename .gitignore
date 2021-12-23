@@ -1,0 +1,9 @@
+# Project exclude paths
+/08-springmvc-HelloWorld/target/
+/09-springmvc-details/target/
+/10-springmvc-backend2Frontend/target/
+/11-springmvc-Restful/target/
+/12-springmvc-restful-case/target/
+/13-springmvc-HttpMessageConverter/target/
+/14-springmvc-Interceptor/target/
+/18-ssm-integration/target/

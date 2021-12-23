@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--    <bean class="com.sgxy.spring.entity.Person" id="p8">
+            <property name="name" value="段正淳"></property>
+            <property name="c" ref="cat3"></property>
+            <property name="book" ref="book3"></property>
+        </bean>-->
+
+    <!--    <bean class="com.sgxy.spring.service.UserService"></bean>-->
+    <bean class="com.sgxy.spring.entity.Person" id="p8" autowire="constructor">
+        <property name="name" value="段正淳"></property>
+        <!--        <property name="c" ref="cat3"></property>-->
+        <!--        <property name="book" ref="book3"></property>-->
+    </bean>
+
+    <!--<bean class="com.sgxy.spring.entity.Cat" id="cat3"></bean>
+    <bean class="com.sgxy.spring.entity.Book" id="book3">
+        <property name="book_name" value="aaa"></property>
+        <property name="book_aythor" value="bbb"></property>
+    </bean>-->
+
+    <bean class="com.sgxy.spring.entity.Book" id="book">
+        <property name="book_name" value="xxx"></property>
+        <property name="book_aythor" value="yyy"></property>
+    </bean>
+
+    <!--    <context:component-scan-->
+    <!--            base-package="com.sgxy.spring.controller,com.sgxy.spring.dao,com.sgxy.spring.service"></context:component-scan>-->
+    <!--开启注解扫描 让容器知道哪些个类被注解标注了-->
+    <!--    <context:component-scan base-package="com.sgxy.spring"/>-->
+
+    <!--
+        assignable 根据实际类名扫描
+        annotation 根据注解类型扫描
+    -->
+    <!--    <context:component-scan base-package="com.sgxy.spring" use-default-filters="false">-->
+    <context:component-scan base-package="com.sgxy.spring">
+        <!--        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+        <!--        <context:include-filter type="assignable" expression="com.sgxy.spring.controller.UserController"/>-->
+        <!--        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>-->
+    </context:component-scan>
+</beans>

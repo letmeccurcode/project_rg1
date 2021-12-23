@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--    <properties>
+            <property name="jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="jdbc.url" value="jdbc:mysql:///mybatis"/>
+            <property name="jdbc.username" value="root"/>
+            <property name="jdbc.password" value="123"/>
+        </properties>-->
+
+    <properties resource="db.properties"></properties>
+
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <typeAliases>
+        <!--@Alias-->
+        <package name="com.sgxy.mybatis.entity"/>
+        <!--<typeAlias type="com.sgxy.mybatis.entity.Student" alias="stu"></typeAlias>-->
+    </typeAliases>
+
+    <environments default="mysql_en">
+        <environment id="mysql_en">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--将SQL映射文件注册到全局配置文件中-->
+    <mappers>
+        <!--        <mapper class=""></mapper>-->
+        <!--        <mapper resource="StudentMapper.xml"></mapper>-->
+        <!--package标签要求配置文件和接口必须具有相同的包结构-->
+        <package name="com.sgxy.mybatis.mappers"/>
+
+        <!--sql语句是以注解形式定义在接口方法声明上-->
+        <!--        <mapper class="com.sgxy.mybatis.mappers.StudentMapper"></mapper>-->
+    </mappers>
+
+</configuration>

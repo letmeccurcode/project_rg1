@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--
+        bean -> 向容器中注册一个实例
+        class -> 该实例的全限定类名
+        id -> 获取该bean的唯一标识
+        property -> 给bean的哪个属性赋值
+        name -> 属性名
+        value -> 属性值
+    -->
+    <bean class="com.sgxy.spring.entity.Person" id="p1">
+        <property name="name" value="张三"></property>
+        <property name="age" value="23"></property>
+        <property name="gender" value="男"></property>
+    </bean>
+
+    <bean class="com.sgxy.spring.entity.Person" id="p2">
+        <property name="name" value="李四"></property>
+        <property name="age" value="23"></property>
+        <property name="gender" value="男"></property>
+    </bean>
+
+    <bean id="p3" class="com.sgxy.spring.entity.Person">
+        <!--<constructor-arg name="name" value="王五"></constructor-arg>
+        <constructor-arg name="age" value="25"></constructor-arg>
+        <constructor-arg name="gender" value="男"></constructor-arg>-->
+
+        <!--<constructor-arg value="25"></constructor-arg>
+        <constructor-arg value="王五"></constructor-arg>
+        <constructor-arg value="男"></constructor-arg>-->
+
+        <!--<constructor-arg value="25" index="1"></constructor-arg>
+        <constructor-arg value="王五" index="0"></constructor-arg>
+        <constructor-arg value="男"></constructor-arg>-->
+    </bean>
+
+    <bean class="com.sgxy.spring.entity.Cat" id="cat">
+        <property name="name" value="咪咪"></property>
+        <property name="breed" value="狸花猫"></property>
+    </bean>
+
+    <bean class="com.sgxy.spring.entity.Person" id="p4">
+
+        <!--        <property name="c" ref="cat"></property>-->
+        <property name="name" value="赵六"></property>
+        <property name="age" value="26"></property>
+        <property name="gender" value="女"></property>
+        <!--引用外部bean-->
+        <!--        <property name="c" ref="cat"></property>-->
+        <property name="c">
+            <!--内部定义-->
+            <bean class="com.sgxy.spring.entity.Cat">
+                <property name="name" value="小花"></property>
+                <property name="breed" value="布偶"></property>
+            </bean>
+        </property>
+
+        <!--<property name="books" ref="mylist">-->
+        <property name="books">
+            <!--创建单列集合对象list-->
+            <list>
+                <!--内部定义-->
+                <bean class="com.sgxy.spring.entity.Book" id="book2">
+                    <property name="book_name" value="繁星春水"></property>
+                    <property name="book_aythor" value="冰心"></property>
+                </bean>
+                <!--外部引用-->
+                <ref bean="book1"></ref>
+            </list>
+        </property>
+
+        <property name="map" ref="mymap">
+            <!--创建了一个map对象 new ConcurrentHashMap-->
+            <!--<map>
+                &lt;!&ndash;调用put方法存储一个键值对&ndash;&gt;
+                <entry key="key1" value="value1"></entry>
+                <entry key="key2" value-ref="book1"></entry>
+                <entry key="key3">
+                    <bean class="com.sgxy.spring.entity.Book">
+                        <property name="book_name" value="大棋局"></property>
+                        <property name="book_aythor" value="布热津斯基"></property>
+                    </bean>
+                </entry>
+            </map>-->
+        </property>
+
+        <property name="pp">
+            <props><!--创建了Properties集合-->
+                <!--setProperty("USA","特朗普")-->
+                <prop key="USA">特朗普</prop>
+                <prop key="RU">普京</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean class="com.sgxy.spring.entity.Book" id="book1">
+        <property name="book_aythor" value="肖洛霍夫"></property>
+        <property name="book_name" value="静静的顿河"></property>
+    </bean>
+
+    <bean class="com.sgxy.spring.entity.Person" id="p5">
+        <property name="name" value="田七"></property>
+        <property name="age" value="27"></property>
+
+        <property name="map" ref="mymap">
+            <!--<map>
+                &lt;!&ndash;调用put方法存储一个键值对&ndash;&gt;
+                <entry key="key1" value="value1"></entry>
+                <entry key="key2" value-ref="book1"></entry>
+                <entry key="key3">
+                    <bean class="com.sgxy.spring.entity.Book">
+                        <property name="book_name" value="大棋局"></property>
+                        <property name="book_aythor" value="布热津斯基"></property>
+                    </bean>
+                </entry>
+            </map>-->
+        </property>
+    </bean>
+
+    <!--
+        LinkedHashmap map = new LinkedHashmap<Person,Object>();
+
+        map.put();
+        map.put();
+        map.put();
+        map.put();
+    -->
+    <!--    <util:map id="mymap" value-type="" key-type="">-->
+    <util:map id="mymap">
+        <entry key="Java" value="HelloWorld"></entry>
+        <entry key="C++" value-ref="cat"></entry>
+        <entry key="Python" value-ref="book1"></entry>
+        <entry key="JS">
+            <bean class="com.sgxy.spring.entity.Book">
+                <property name="book_aythor" value="bbb"></property>
+                <property name="book_name" value="aaa"></property>
+            </bean>
+        </entry>
+    </util:map>
+
+    <!--new ArrayList<Object>()-->
+    <!--new ArrayList<Person>()-->
+    <!--    <util:list value-type="com.sgxy.spring.entity.Person">-->
+    <util:list id="mylist">
+        <bean class="com.sgxy.spring.entity.Person"/>
+        <bean class="com.sgxy.spring.entity.Book"></bean>
+        <bean class="com.sgxy.spring.entity.Cat"></bean>
+        <ref bean="cat"></ref>
+        <ref bean="p5"></ref>
+        <ref bean="mymap"></ref>
+    </util:list>
+
+    <bean class="com.sgxy.spring.entity.Person" id="p6">
+        <property name="name" value="段誉"></property>
+        <property name="age" value="23"></property>
+
+        <!--mybatis-->
+        <property name="c" ref="cat"></property>
+        <property name="c.breed" value="布偶"></property>
+        <property name="c.name" value="喵喵"></property>
+    </bean>
+
+    <bean class="com.sgxy.spring.entity.Person" id="p7" abstract="true">
+        <property name="name" value="秦红棉"></property>
+        <property name="age" value="33"></property>
+        <property name="gender" value="女"></property>
+        <property name="c" ref="cat"></property>
+    </bean>
+
+    <bean id="p8" parent="p7">
+        <property name="name" value="阮星竹"></property>
+    </bean>
+
+    <bean id="p9" parent="p7">
+        <property name="name" value="甘宝宝"></property>
+    </bean>
+
+
+</beans>

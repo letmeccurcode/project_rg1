@@ -1,0 +1,40 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="12-springmvc-restful-case:war exploded">
+    <output-path>$PROJECT_DIR$/12-springmvc-restful-case/target/12-springmvc-restful-case</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>12-springmvc-restful-case</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="12-springmvc-restful-case" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.3.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.3.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.3.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.3.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.3.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.3.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.3.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.3.1" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.2.5" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.2.5" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.31" />
+          <element id="library" level="project" name="Maven: javax.servlet.jsp:jsp-api:2.2" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-test:5.0.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.22" />
+          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/12-springmvc-restful-case/target/12-springmvc-restful-case/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="12-springmvc-restful-case/web/Web" />
+    </root>
+  </artifact>
+</component>

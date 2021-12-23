@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.springframework.validation.support.BindingAwareModelMap</OriginalElement>
+  <nodes>
+    <node x="325.6875" y="255.0">java.util.LinkedHashMap</node>
+    <node x="0.0" y="85.0">java.lang.Cloneable</node>
+    <node x="372.0" y="85.0">java.util.AbstractMap</node>
+    <node x="219.68749999999997" y="340.0">org.springframework.ui.Model</node>
+    <node x="467.75694444444446" y="0.0">java.util.Map</node>
+    <node x="294.0" y="170.0">java.util.HashMap</node>
+    <node x="237.68749999999997" y="425.0">org.springframework.ui.ExtendedModelMap</node>
+    <node x="350.6875" y="340.0">org.springframework.ui.ModelMap</node>
+    <node x="170.99999999999997" y="85.0">java.io.Serializable</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="java.util.HashMap" target="java.util.Map">
+      <point x="49.125" y="-17.5" />
+      <point x="408.625" y="150.0" />
+      <point x="553.5" y="150.0" />
+      <point x="553.5" y="65.0" />
+      <point x="513.2569444444445" y="65.0" />
+      <point x="0.0" y="17.5" />
+    </edge>
+    <edge source="java.util.HashMap" target="java.lang.Cloneable">
+      <point x="-49.125" y="-17.5" />
+      <point x="310.375" y="150.0" />
+      <point x="75.5" y="150.0" />
+      <point x="0.0" y="17.5" />
+    </edge>
+    <edge source="java.util.HashMap" target="java.util.AbstractMap">
+      <point x="16.375" y="-17.5" />
+      <point x="375.875" y="140.0" />
+      <point x="457.5" y="140.0" />
+      <point x="0.0" y="17.5" />
+    </edge>
+    <edge source="java.util.AbstractMap" target="java.util.Map">
+      <point x="0.0" y="-17.5" />
+      <point x="457.5" y="65.0" />
+      <point x="482.9236111111111" y="65.0" />
+      <point x="-30.333333333333343" y="17.5" />
+    </edge>
+    <edge source="java.util.HashMap" target="java.io.Serializable">
+      <point x="-16.375" y="-17.5" />
+      <point x="343.125" y="140.0" />
+      <point x="261.5" y="140.0" />
+      <point x="0.0" y="17.5" />
+    </edge>
+    <edge source="java.util.LinkedHashMap" target="java.util.HashMap">
+      <point x="-47.75" y="-17.5" />
+      <point x="373.4375" y="230.0" />
+      <point x="359.5" y="230.0" />
+      <point x="0.0" y="17.5" />
+    </edge>
+    <edge source="org.springframework.ui.ExtendedModelMap" target="org.springframework.ui.ModelMap">
+      <point x="55.25" y="-17.5" />
+      <point x="403.4375" y="400.0" />
+      <point x="421.1875" y="400.0" />
+      <point x="0.0" y="17.5" />
+    </edge>
+    <edge source="org.springframework.ui.ModelMap" target="java.util.LinkedHashMap">
+      <point x="0.0" y="-17.5" />
+      <point x="0.0" y="17.5" />
+    </edge>
+    <edge source="java.util.LinkedHashMap" target="java.util.Map">
+      <point x="47.75" y="-17.5" />
+      <point x="468.9375" y="230.0" />
+      <point x="565.0277777777777" y="230.0" />
+      <point x="565.0277777777777" y="55.0" />
+      <point x="543.5902777777777" y="55.0" />
+      <point x="30.333333333333314" y="17.5" />
+    </edge>
+    <edge source="org.springframework.ui.ExtendedModelMap" target="org.springframework.ui.Model">
+      <point x="-55.25" y="-17.5" />
+      <point x="292.9375" y="400.0" />
+      <point x="275.1875" y="400.0" />
+      <point x="0.0" y="17.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="283.0" y="230.0" />
+  <SelectedNodes>
+    <node>java.io.Serializable</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

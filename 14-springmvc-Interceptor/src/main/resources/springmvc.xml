@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:component-scan base-package="com.sgxy.springmvc"/>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="resolver">
+        <property name="prefix" value="/WEB-INF/views/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+    <mvc:default-servlet-handler/>
+
+    <!--1 配置转换服务工厂对象-->
+    <bean class="org.springframework.context.support.ConversionServiceFactoryBean"
+          id="conversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <!--创建了HashSet集合-->
+                <bean class="com.sgxy.springmvc.converter.String2DateConverter"></bean>
+            </set>
+        </property>
+    </bean>
+    <!--2 修改基于mvc的注解驱动 使类型转换的服务生效-->
+    <mvc:annotation-driven conversion-service="conversionServiceFactoryBean"></mvc:annotation-driven>
+
+    <mvc:interceptors>
+        <!--默认拦截所有控制器方法-->
+        <!--<bean class="com.sgxy.springmvc.Interceptors.MyInterceptorA"></bean>-->
+        <!--<ref bean="ia"></ref>-->
+
+        <mvc:interceptor>
+            <!--匹配拦截多级目录下的控制器方法-->
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/to_index3"/>
+            <ref bean="ia"></ref>
+        </mvc:interceptor>
+
+        <mvc:interceptor>
+            <!--匹配拦截多级目录下的控制器方法-->
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/to_index1"/>
+            <ref bean="ib"></ref>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <bean
+            class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <!--如果出现ArithmeticException 就跳转到error页面-->
+                <prop key="java.lang.ArithmeticException">error</prop>
+                <prop key="java.lang.ArrayIndexOutOfBoundsException">error</prop>
+                <prop key="java.lang.StringIndexOutOfBoundsException">error</prop>
+            </props>
+        </property>
+
+        <!--将异常信息存入到了请求域中 异常的名称ex-->
+        <property name="exceptionAttribute" value="ex"></property>
+    </bean>
+
+
+</beans>

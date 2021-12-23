@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/01-spring-ioc" />
+    <file type="web" url="file://$PROJECT_DIR$/02-spring-aop-calculator" />
+    <file type="web" url="file://$PROJECT_DIR$/03-spring-aop-annotation" />
+    <file type="web" url="file://$PROJECT_DIR$/04-spring-aop-xml" />
+    <file type="web" url="file://$PROJECT_DIR$/05-spring-jdbctemplate" />
+    <file type="web" url="file://$PROJECT_DIR$/06-spring-tx-annotation" />
+    <file type="web" url="file://$PROJECT_DIR$/07-spring-tx-xml" />
+    <file type="web" url="file://$PROJECT_DIR$/08-springmvc-HelloWorld" />
+    <file type="web" url="file://$PROJECT_DIR$/09-springmvc-details" />
+    <file type="web" url="file://$PROJECT_DIR$/10-springmvc-backend2Frontend" />
+    <file type="web" url="file://$PROJECT_DIR$/11-springmvc-Restful" />
+    <file type="web" url="file://$PROJECT_DIR$/12-springmvc-restful-case" />
+    <file type="web" url="file://$PROJECT_DIR$/13-springmvc-HttpMessageConverter" />
+    <file type="web" url="file://$PROJECT_DIR$/14-springmvc-Interceptor" />
+    <file type="web" url="file://$PROJECT_DIR$/18-ssm-integration" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/01-spring-ioc/pom.xml" />
+        <option value="$PROJECT_DIR$/02-spring-aop-calculator/pom.xml" />
+        <option value="$PROJECT_DIR$/03-spring-aop-annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/04-spring-aop-xml/pom.xml" />
+        <option value="$PROJECT_DIR$/05-spring-jdbctemplate/pom.xml" />
+        <option value="$PROJECT_DIR$/06-spring-tx-annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/07-spring-tx-xml/pom.xml" />
+        <option value="$PROJECT_DIR$/08-springmvc-HelloWorld/pom.xml" />
+        <option value="$PROJECT_DIR$/09-springmvc-details/pom.xml" />
+        <option value="$PROJECT_DIR$/10-springmvc-backend2Frontend/pom.xml" />
+        <option value="$PROJECT_DIR$/11-springmvc-Restful/pom.xml" />
+        <option value="$PROJECT_DIR$/12-springmvc-restful-case/pom.xml" />
+        <option value="$PROJECT_DIR$/13-springmvc-HttpMessageConverter/pom.xml" />
+        <option value="$PROJECT_DIR$/14-springmvc-Interceptor/pom.xml" />
+        <option value="$PROJECT_DIR$/15-mybatis-xml-base/pom.xml" />
+        <option value="$PROJECT_DIR$/16-mybatis-interface-base/pom.xml" />
+        <option value="$PROJECT_DIR$/17-mybatis-SQLMapping/pom.xml" />
+        <option value="$PROJECT_DIR$/18-ssm-integration/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
